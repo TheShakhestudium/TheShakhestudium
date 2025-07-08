@@ -1,0 +1,4 @@
+<div class="lang-switcher">
+  {% assign other = page.lang == "en" ? "es" : "en" %}
+  <a href="{{ page.url | replace: '/' | prepend: '/' | prepend: other }}">{{ other | upcase }}</a>
+</div>
