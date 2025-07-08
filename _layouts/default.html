@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  {{ head }}
+</head>
+<body class="theme--dark">
+  <header>
+    {% include lang-switcher.html %}
+    <nav>
+      {% for item in site.data.navigation[page.lang] %}
+        <a href="{{ item.url }}">{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    &copy; {{ site.time | date: "%Y" }} {{ site.title }}
+  </footer>
+  {{ scripts }}
+</body>
+</html>
