@@ -1,9 +1,8 @@
 title: "THESHAKHESTUDIUM"
-email: you@correo.com
+email: theshakhestudium@theshakhestudium.com
 description: "Silent and against the current. Not to conquer, but to decode."
 baseurl: ""
-url: "https://TU-USUARIO.github.io"
-
+url: "https://github.com/TheShakhestudium"
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-multiple-languages-plugin
