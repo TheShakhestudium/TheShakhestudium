@@ -1,5 +1,3 @@
-# /_pages/legal.md
-
 ---
 layout: default
 title: "Legal Notice"
