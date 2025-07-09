@@ -19,3 +19,7 @@ logo: "/assets/images/PNG.png"
 minimal_mistakes_skin: "custom"
 sass:
   style: compressed
+header:
+  image: "/assets/images/logo.png"
+  overlay_color: "#000"   # Cambia el color de fondo del header si lo deseas
+  overlay_filter: 0.3     # Ajusta la opacidad del overlay
