@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Manifiesto"
+title: "Nuestro Manifiesto"
 lang: es
 permalink: /es/manifesto/
 ---
 
-# Manifiesto
+# Nuestro Manifiesto
 
 En THESHAKHESTUDIUM promovemos la transformación integral con un enfoque sistemático y analítico: cuestionamos convicciones heredadas, tabúes institucionales y relatos oficiales, y facilitamos el descubrimiento colaborativo de realidades ocultas mediante procesos participativos y diálogo constructivo.
 
