@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Manifesto"
+title: "Our Manifesto"
 lang: en
 permalink: /manifesto/
 ---
