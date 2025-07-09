@@ -15,5 +15,7 @@ exclude_from_localizations:
 
 data_dir: _data
 
-logo: "/assets/images/logo.png"
+logo: "/assets/images/PNG.png"
 minimal_mistakes_skin: "custom"
+sass:
+  style: compressed
