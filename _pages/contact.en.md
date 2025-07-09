@@ -9,7 +9,7 @@ permalink: /contact/
 
 Ready to question your reality and co-create new insights? Reach out:
 
-- **Email:** [hello@theshakhestudium.com](theshakhestudium@theshakhestudium.com)  
+- **Email:** [theshakhestudium@theshakhestudium.com](theshakhestudium@theshakhestudium.com)  
 - **Social:**  
   - [Instagram](#) · [TikTok](#) · [Facebook](#) · [Twitter](#)  
 - **Collaborations & Press:** Use the form below or write us directly.
