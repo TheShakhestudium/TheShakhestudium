@@ -5,7 +5,7 @@ lang: en
 permalink: /manifesto/
 ---
 
-# THESHAKHESTUDIUM Manifesto
+# Our Manifesto
 
 At THESHAKHESTUDIUM we champion holistic transformation through a systematic and analytical approach: we challenge inherited convictions, institutional taboos and official narratives, and we foster the collaborative discovery of hidden realities through participatory processes and constructive dialogue.
 
