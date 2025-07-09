@@ -9,7 +9,7 @@ permalink: /es/contacto/
 
 ¿Listo para cuestionar tu realidad y co-crear nuevos insights? Escríbenos:
 
-- **Email:** [hola@theshakhestudium.com](mailto:hola@theshakhestudium.com)  
+- **Email:** [hola@theshakhestudium.com](theshakhestudium@theshakhestudium.com)  
 - **Redes sociales:**  
   - [Instagram](#) · [TikTok](#) · [Facebook](#) · [Twitter](#)  
 - **Colaboraciones y prensa:** Rellena el formulario o envíanos un mensaje directo.
