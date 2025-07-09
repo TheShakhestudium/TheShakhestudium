@@ -9,8 +9,8 @@ en:
     url: "/services/"
   - title: "Podcast"
     url: "/podcast/"
-  - title: "Ideas"
-    url: "/ideas/"
+  - title: "thinkery"
+    url: "/thinkery/"
   - title: "Contact"
     url: "/contact/"
 es:
