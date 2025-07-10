@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Our Manifesto"
 lang: en
-permalink: /manifesto/
+title: Manifesto
+permalink: /en/manifesto/
+layout: page
 ---
 
 # Our Manifesto
