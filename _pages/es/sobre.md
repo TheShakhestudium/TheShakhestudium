@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Acerca de"
 lang: es
-permalink: /es/acerca de/
+title: Sobre
+permalink: /es/sobre/
+layout: page
 ---
 
 # Sobre THESHAKHESTUDIUM
