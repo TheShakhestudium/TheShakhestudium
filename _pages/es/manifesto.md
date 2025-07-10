@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Nuestro Manifiesto"
 lang: es
+title: Manifiesto
 permalink: /es/manifesto/
+layout: page
 ---
 
 # Nuestro Manifiesto
