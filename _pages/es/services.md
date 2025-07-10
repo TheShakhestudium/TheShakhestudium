@@ -2,7 +2,7 @@
 layout: default
 title: "Servicios"
 lang: es
-permalink: /es/services/
+permalink: /es/servicios/
 ---
 
 # Nuestros Servicios
