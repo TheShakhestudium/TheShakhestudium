@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Podcast"
 lang: es
-permalink: /podcast/
+title: Podcast
+permalink: /es/podcast/
+layout: page
 ---
 
 # Podcast
