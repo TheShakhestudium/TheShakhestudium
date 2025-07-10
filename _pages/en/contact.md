@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Contact"
 lang: en
-permalink: /contact/
+title: Contact
+permalink: /en/contact/
+layout: page
 ---
 
 # Get in Touch
