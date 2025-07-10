@@ -1,10 +1,8 @@
-# /_pages/es/aviso-legal.md
-
 ---
-layout: default
-title: "Aviso Legal"
 lang: es
-permalink: /aviso-legal/
+title: Aviso Legal
+permalink: /es/aviso-legal/
+layout: page
 ---
 
 ## Aviso Legal
