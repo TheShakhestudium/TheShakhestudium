@@ -1,10 +1,8 @@
-# /_pages/es/politica-privacidad.md
-
 ---
-layout: default
-title: "Política de Privacidad"
 lang: es
+title: Política de Privacidad
 permalink: /es/politica-privacidad/
+layout: page
 ---
 
 ## Política de Privacidad
