@@ -1,10 +1,8 @@
-# /_pages/privacy.md
-
 ---
-layout: default
-title: "Privacy Policy"
 lang: en
-permalink: /privacy/
+title: Privacy Policy
+permalink: /en/privacy/
+layout: page
 ---
 
 ## Privacy Policy
