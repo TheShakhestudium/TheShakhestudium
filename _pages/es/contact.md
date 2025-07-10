@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Contacto"
 lang: es
-permalink: /es/contacto/
+title: Contacto
+permalink: /es/contact/
+layout: page
 ---
 
 # Contáctanos
