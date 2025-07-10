@@ -1,8 +1,8 @@
 --- 
-layout: default
-title: "About"
 lang: en
-permalink: /about/
+title: About
+permalink: /en/about/
+layout: page
 ---
 
 # About THESHAKHESTUDIUM
