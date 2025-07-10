@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Legal Notice"
 lang: en
-permalink: /legal/
+title: Legal Notice
+permalink: /en/legal/
+layout: page
 ---
 
 ## Legal Notice
