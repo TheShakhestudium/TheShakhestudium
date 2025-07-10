@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Thinkery"
 lang: en
-permalink: /ideas/
+title: Thinkery
+permalink: /en/thinkery/
+layout: page
 ---
 
 # Thinkery
