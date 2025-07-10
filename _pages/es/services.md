@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Servicios"
 lang: es
-permalink: /es/servicios/
+title: Servicios
+permalink: /es/services/
+layout: page
 ---
 
 # Nuestros Servicios
