@@ -1,8 +1,8 @@
 ---
-layout: default
-title: "Pensadero"
 lang: es
-permalink: /es/ideas/
+title: Pensadero
+permalink: /es/pensadero/
+layout: page
 ---
 
 # Pensadero
