@@ -1,14 +1,19 @@
+```html
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
 
-  <!-- Etiquetas SEO -->
+  <!-- Título y SEO básico -->
+  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}" />
   <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
   <meta name="author" content="{{ page.author | default: site.author }}" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
   <!-- Open Graph (SEO social) -->
   <meta property="og:title" content="{{ page.title | escape }}" />
@@ -17,12 +22,18 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="{{ page.image | default: site.image | absolute_url }}" />
 
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.title | escape }}" />
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
+  <meta name="twitter:image" content="{{ page.image | default: site.image | absolute_url }}" />
+
   <!-- SEO multilingüe -->
-  <link rel="alternate" hreflang="es" href="/es/" />
-  <link rel="alternate" hreflang="en" href="/en/" />
-  <link rel="alternate" hreflang="fr" href="/fr/" />
-  <link rel="alternate" hreflang="de" href="/de/" />
-  <link rel="alternate" hreflang="x-default" href="/en/" />
+  <link rel="alternate" hreflang="es" href="{{ '/es/' | absolute_url }}" />
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}" />
+  <link rel="alternate" hreflang="fr" href="{{ '/fr/' | absolute_url }}" />
+  <link rel="alternate" hreflang="de" href="{{ '/de/' | absolute_url }}" />
+  <link rel="alternate" hreflang="x-default" href="{{ '/en/' | absolute_url }}" />
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
@@ -30,19 +41,93 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
+  <meta name="theme-color" content="#000000" />
 
-  <!-- Fuentes y estilos -->
+  <!-- Sitemap & robots -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ '/sitemap.xml' | absolute_url }}" />
+  <link rel="robots" href="{{ '/robots.txt' | absolute_url }}" />
+
+  <!-- Preconnect & Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet principal (minificado en producción) -->
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 
-  <!-- Plugins, meta & scripts -->
+  <!-- JSON-LD para rich snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "{{ site.url | default: site.github.url }}",
+    "name": "{{ site.title }}",
+    "description": "{{ site.description }}"
+  }
+  </script>
+
+  <!-- Google Analytics 4 (reemplaza G-CFF80MDFK0 con tu ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFF80MDFK0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CFF80MDFK0', { 'anonymize_ip': true });
+  </script>
+
+  <!-- Meta-refresh fallback para JS deshabilitado -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; URL={{ '/en/' | relative_url }}" />
+  </noscript>
+
+  <!-- Plugins, meta & scripts adicionales -->
   {{ head }}
 </head>
 <body class="theme--dark">
+  <!-- Spinner y redirección según idioma -->
+  <div id="spinner"></div>
+  <style>
+    #spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #333;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 1s linear infinite;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+  <script>
+    // No ejecutar en localhost o staging
+    const host = window.location.hostname;
+    if (!/^(localhost|127\.0\.0\.1|::1|staging\.example\.com)$/i.test(host)) {
+      const langMap = {
+        es: "{{ '/es/' | relative_url }}",
+        fr: "{{ '/fr/' | relative_url }}",
+        de: "{{ '/de/' | relative_url }}",
+        en: "{{ '/en/' | relative_url }}"
+      };
+      const userLang = navigator.language.slice(0, 2);
+      window.location.href = langMap[userLang] || langMap.en;
+    }
+  </script>
+  <noscript>
+    <p>JavaScript deshabilitado. Selecciona tu idioma:</p>
+    <ul>
+      <li><a href="{{ '/es/' | relative_url }}">Español</a></li>
+      <li><a href="{{ '/en/' | relative_url }}">English</a></li>
+      <li><a href="{{ '/fr/' | relative_url }}">Français</a></li>
+      <li><a href="{{ '/de/' | relative_url }}">Deutsch</a></li>
+    </ul>
+  </noscript>
+
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" role="banner">
     {% include lang-switcher.html %}
     <nav aria-label="Main navigation">
       {% for item in site.data.navigation[page.lang | default: site.default_lang] %}
@@ -52,13 +137,14 @@
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="page page__content">
+  <main class="page page__content" role="main">
     {{ content }}
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     {% include footer.html %}
   </footer>
 </body>
 </html>
+```
