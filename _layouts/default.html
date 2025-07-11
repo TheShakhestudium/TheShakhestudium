@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
+  <meta name="author" content="{{ page.author | default: site.author }}" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description | default: site.description }}" />
+  <meta property="og:url"         content="{{ page.url | absolute_url }}" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image"       content="{{ page.image | default: site.image | absolute_url }}" />
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ '/assets/images/favicon-32x32.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ '/assets/images/favicon-16x16.png' | relative_url }}" />
+  <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?
+         family=Inter:wght@400;500;700;900&
+         family=Playfair+Display:wght@700;900&
+         display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
+
+  <!-- Plugins, meta & scripts -->
   {{ head }}
 </head>
 <body class="theme--dark">
-  <header>
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
     {% include lang-switcher.html %}
-    <nav>
-      {% for item in site.data.navigation[page.lang] %}
-        <a href="{{ item.url }}">{{ item.title }}</a>
+    <nav aria-label="Main navigation">
+      {% for item in site.data.navigation[page.lang | default: site.default_lang] %}
+        <a href="{{ item.url | relative_url }}" aria-label="{{ item.title }}">{{ item.title }}</a>
       {% endfor %}
     </nav>
   </header>
-  <main>
+
+  <!-- PAGE CONTENT -->
+  <main class="page page__content">
     {{ content }}
   </main>
-  {% include footer.html %}
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    {% include footer.html %}
+  </footer>
+
 </body>
 </html>
