@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
@@ -132,9 +131,7 @@
     {% include lang-switcher.html %}
     <nav aria-label="Main navigation">
       {% assign lang = page.lang | default: site.default_lang %}
-{% for item in site.data.navigation[lang] %}
-  <!-- Código dentro del bucle -->
-{% endfor %}
+      {% for item in site.data.navigation[lang] %}
         <a href="{{ item.url | relative_url }}" aria-label="{{ item.title }}">{{ item.title }}</a>
       {% endfor %}
     </nav>
@@ -151,4 +148,3 @@
   </footer>
 </body>
 </html>
-```
