@@ -131,7 +131,10 @@
   <header class="site-header" role="banner">
     {% include lang-switcher.html %}
     <nav aria-label="Main navigation">
-      {% for item in site.data.navigation[page.lang | default: site.default_lang] %}
+      {% assign lang = page.lang | default: site.default_lang %}
+{% for item in site.data.navigation[lang] %}
+  <!-- Código dentro del bucle -->
+{% endfor %}
         <a href="{{ item.url | relative_url }}" aria-label="{{ item.title }}">{{ item.title }}</a>
       {% endfor %}
     </nav>
