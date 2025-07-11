@@ -1,0 +1,49 @@
+<head>
+  <!-- Preconexión y prefetch DNS para gtag.js -->
+  <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com">
+
+  <!-- Otros metadatos -->
+
+  <script>
+    (function() {
+      const GA_ID = 'G-CFF80MDFK0';
+      const disabledHostsRegex = /^(localhost|127\.0\.0\.1|::1|staging\.\w+\.\w+)$/;
+
+      // No cargamos Analytics en entornos de desarrollo o staging
+      if (disabledHostsRegex.test(window.location.hostname)) return;
+
+      // Verifica si el script ya está inyectado
+      if (!document.querySelector(`script[src*="${GA_ID}"]`)) {
+        // Inyecta gtag.js y llama initGtag al cargar
+        const script = document.createElement('script');
+        script.async = true;
+        script.src   = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        script.onload = initGtag;
+        document.head.appendChild(script);
+      }
+
+      function initGtag() {
+        // Cola de hits
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        // Inicializa GA4 con anonimización de IP y configuraciones adicionales
+        gtag('js', new Date());
+        gtag('config', GA_ID, {
+          anonymize_ip: true,
+          send_page_view: true,
+          link_attribution: true
+        });
+
+        // Helper para registrar eventos personalizados
+        window.trackEvent = (eventName, eventParams) =>
+          gtag('event', eventName, eventParams);
+      }
+    })();
+  </script>
+
+  <noscript>
+    <img src="https://www.googletagmanager.com/ns.html?id=G-CFF80MDFK0" alt="Google Analytics" />
+  </noscript>
+</head>
