@@ -17,9 +17,6 @@
   <main>
     {{ content }}
   </main>
-  <footer>
-    &copy; {{ site.time | date: "%Y" }} {{ site.title }}
-  </footer>
-  {{ scripts }}
+  {% include footer.html %}
 </body>
 </html>
