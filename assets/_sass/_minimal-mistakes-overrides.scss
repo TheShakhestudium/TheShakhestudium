@@ -1,0 +1,157 @@
+@use "minimal-mistakes/skins/default" as *;
+
+// 1. BRAND VARIABLES
+$primary-color:        #D4AF37;   // Antique Gold
+$background-color:     #171717;   // Deep Black
+$text-color:           #C0C0C0;   // Neutral Light Gray
+$accent-color:         #FF2B91;   // Neon Fuchsia
+$header-background:    #171717;
+$footer-background:    #171717;
+$footer-text:          #D4AF37;
+$link-hover:           #00BFFF;   // Electric Blue
+$footer-separator:     #8B572A;   // Bronze
+
+$font-main:            'Inter', sans-serif;
+$font-alt:             'Playfair Display', serif;
+
+// 2. HEADER
+.site-header {
+  background: $header-background;
+  color: #ffffff;
+  padding: 1.25rem 0;
+  .site-title {
+    color: #ffffff;
+    font-family: $font-alt;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  nav {
+    margin-top: 0.5rem;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 2rem;
+      font-family: $font-main;
+      font-size: 1.08rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      &:hover, &:focus {
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  a {
+    color: $accent-color;
+    font-family: $font-main;
+    font-weight: 600;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// 3. CONTENT OVERRIDES
+main, .page, .page__content {
+  background: transparent;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: $font-main;
+  color: $text-color;
+}
+
+h1, h2 {
+  color: $primary-color;
+  font-family: $font-alt;
+  font-weight: 900;
+  margin: 2.2rem 0 1rem;
+}
+h3, h4, h5, h6 {
+  color: $primary-color;
+  font-family: $font-alt;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+}
+
+.lead, .slogan {
+  font-family: $font-alt;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+}
+
+blockquote {
+  border-left: 4px solid $primary-color;
+  padding-left: 1.5em;
+  background: lighten($primary-color, 35%);
+  margin: 2em 0;
+}
+
+// 4. SIDEBAR
+.sidebar {
+  background: lighten($header-background, 30%);
+  color: #ffffff;
+  padding: 2rem 1rem;
+  a {
+    color: $primary-color;
+    &:hover { color: $accent-color; }
+  }
+}
+
+// 5. FOOTER
+.site-footer {
+  background-color: $footer-background;
+  color: $footer-text;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  font-family: $font-main;
+  border-top: 4px solid $footer-text;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    @media (max-width: 900px) {
+      flex-direction: column; align-items: flex-start;
+    }
+  }
+  .footer-brand { /* … */ }
+  .footer-nav .footer-links { /* … */ }
+}
+
+// 6. MISC (imágenes, tablas, code, formularios)
+img, .page__content img {
+  max-width: 100%; height: auto; display: block; margin: 2rem 0;
+}
+table {
+  width:100%; border-collapse:collapse; margin:2rem 0;
+  th, td { border:1px solid $primary-color; padding:0.75em 1em; }
+  th { background: lighten($primary-color,55%); color:$primary-color; }
+  tr:nth-child(even) { background:#1f1f1f; }
+}
+pre, code {
+  font-family:'Fira Mono', monospace;
+  background:#232323; color:$primary-color;
+  border-radius:3px; padding:0.3em 0.6em;
+}
+input, textarea, select {
+  border:1px solid $primary-color; border-radius:3px;
+  padding:0.5em; font-family:$font-main; font-size:1rem; margin-bottom:1em;
+}
+input[type="submit"], button, .btn {
+  background:$primary-color; color:#fff; border:none;
+  border-radius:2px; padding:0.5em 1.5em; cursor:pointer;
+  transition: background 0.2s;
+  &:hover { background:$accent-color; }
+}
