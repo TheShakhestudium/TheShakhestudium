@@ -1,32 +1,26 @@
 // ===================================================================
 // CUSTOM SASS STYLESHEET FOR MINIMAL MISTAKES THEME
-// by TheShakhestudium (Brand Board applied)
+// by TheShakhestudium — PRODUCTION READY VERSION
 // ===================================================================
 
-// ------------------------------------------------------------
-// 1. IMPORT MINIMAL MISTAKES SKIN (BASE THEME OVERRIDES LATER)
-// ------------------------------------------------------------
-@import "minimal-mistakes/skins/default";
+// 1. USE BASE SKIN (uses @use for modern Sass environments)
+@use "minimal-mistakes/skins/default" as *;
 
-// ------------------------------------------------------------
-// 2. BRAND COLORS AND VARIABLES
-// ------------------------------------------------------------
-$primary-color:        #D4AF37;   // Antique Gold (links, botones principales)
-$background-color:     #171717;   // Deep Black (fondo general)
-$text-color:           #C0C0C0;   // Gris neutro claro (texto principal)
-$accent-color:         #FF2B91;   // Neon Fuchsia (botones secundarios, detalles)
-$header-background:    #171717;   // Deep Black (fondo header/nav)
-$footer-background:    #171717;   // Deep Black (fondo footer)
-$footer-text:          #D4AF37;   // Antique Gold (texto footer)
-$link-hover:           #00BFFF;   // Electric Blue (hover enlaces)
-$footer-separator:     #8B572A;   // Bronze (separador footer)
+// 2. BRAND VARIABLES
+$primary-color:        #D4AF37;   // Antique Gold
+$background-color:     #171717;   // Deep Black
+$text-color:           #C0C0C0;   // Neutral Light Gray
+$accent-color:         #FF2B91;   // Neon Fuchsia
+$header-background:    #171717;
+$footer-background:    #171717;
+$footer-text:          #D4AF37;
+$link-hover:           #00BFFF;   // Electric Blue
+$footer-separator:     #8B572A;   // Bronze
 
-$font-main:            'Inter', sans-serif;           // Texto, UI, cuerpo
-$font-alt:             'Playfair Display', serif;    // Titulares, slogans, logo
+$font-main:            'Inter', sans-serif;
+$font-alt:             'Playfair Display', serif;
 
-// ------------------------------------------------------------
-// 3. GENERAL SITE STYLES
-// ------------------------------------------------------------
+// 3. GENERAL STYLES
 body {
   background: $background-color;
   color: $text-color;
@@ -51,7 +45,6 @@ a:focus,
   outline: none;
 }
 
-// Botones y acentos
 .page__title,
 .btn,
 .button,
@@ -73,9 +66,7 @@ a:focus,
   background: $accent-color;
 }
 
-// ------------------------------------------------------------
-// 4. HEADER & NAVIGATION
-// ------------------------------------------------------------
+// 4. HEADER
 .site-header {
   background: $header-background;
   color: #ffffff;
@@ -91,6 +82,7 @@ a:focus,
 
   nav {
     margin-top: 0.5rem;
+
     a {
       color: #ffffff;
       text-decoration: none;
@@ -124,9 +116,7 @@ a:focus,
   }
 }
 
-// ------------------------------------------------------------
-// 5. MAIN CONTENT AREA
-// ------------------------------------------------------------
+// 5. CONTENT
 main,
 .page,
 .page__content {
@@ -142,7 +132,6 @@ h1, h2 {
   color: $primary-color;
   font-family: $font-alt;
   font-weight: 900;
-  letter-spacing: 0.01em;
   margin-top: 2.2rem;
   margin-bottom: 1rem;
 }
@@ -151,7 +140,6 @@ h3, h4, h5, h6 {
   color: $primary-color;
   font-family: $font-alt;
   font-weight: 700;
-  letter-spacing: 0.01em;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
@@ -169,18 +157,15 @@ blockquote {
   border-left: 4px solid $primary-color;
   padding-left: 1.5em;
   color: darken($primary-color, 25%);
-  background: lighten($primary-color, 44%);
+  background: lighten($primary-color, 35%);
   margin: 2em 0;
 }
 
-// ------------------------------------------------------------
-// 6. SIDEBAR (IF ENABLED)
-// ------------------------------------------------------------
+// 6. SIDEBAR
 .sidebar {
   background: lighten($header-background, 30%);
   color: #ffffff;
   padding: 2rem 1rem;
-  font-family: $font-main;
 
   a {
     color: $primary-color;
@@ -191,9 +176,7 @@ blockquote {
   }
 }
 
-// ------------------------------------------------------------
-// 7. FOOTER (DETAILED BRAND STYLES)
-// ------------------------------------------------------------
+// 7. FOOTER
 .site-footer {
   background-color: $footer-background;
   color: $footer-text;
@@ -214,7 +197,6 @@ blockquote {
     @media (max-width: 900px) {
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
     }
   }
 
@@ -231,25 +213,15 @@ blockquote {
     .footer-copy {
       margin: 0;
       line-height: 1.4;
-      color: $footer-text;
     }
   }
 
   .footer-nav {
-    margin-top: 1rem;
-
-    @media (min-width: 600px) {
-      margin-top: 0;
-    }
-
     .footer-links {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      font-family: $font-main;
 
       li {
         position: relative;
@@ -267,20 +239,15 @@ blockquote {
         text-decoration: none;
         transition: color 0.2s ease;
 
-        &:hover,
-        &:focus {
+        &:hover {
           color: $link-hover;
-          outline: none;
         }
       }
     }
   }
 }
 
-// ------------------------------------------------------------
-// 8. MISCELLANEOUS
-// ------------------------------------------------------------
-// Responsive images
+// 8. MISC
 img,
 .page__content img {
   max-width: 100%;
@@ -289,7 +256,6 @@ img,
   margin: 2rem 0;
 }
 
-// Tables
 table {
   width: 100%;
   border-collapse: collapse;
@@ -303,25 +269,22 @@ table {
   th {
     background: lighten($primary-color, 55%);
     color: $primary-color;
-    font-weight: 700;
   }
 
   tr:nth-child(even) {
-    background: #f5f5f5;
+    background: #1f1f1f;
   }
 }
 
-// Code blocks
 pre,
 code {
-  font-family: 'Fira Mono', 'Consolas', 'Liberation Mono', monospace;
+  font-family: 'Fira Mono', monospace;
   background: #232323;
   color: $primary-color;
   border-radius: 3px;
   padding: 0.3em 0.6em;
 }
 
-// Forms
 input,
 textarea,
 select {
@@ -349,7 +312,6 @@ button,
   }
 }
 
-// Accessibility focus
 a:focus,
 button:focus,
 input:focus,
