@@ -2,50 +2,46 @@
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
 
-  <title>{{ page.title }} · {{ site.title }}</title>
+  <!-- Etiquetas SEO -->
   <meta name="description" content="{{ page.description | default: site.description }}" />
   <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
   <meta name="author" content="{{ page.author | default: site.author }}" />
 
-  <!-- Open Graph -->
-  <meta property="og:title"       content="{{ page.title }}" />
+  <!-- Open Graph (SEO social) -->
+  <meta property="og:title" content="{{ page.title | escape }}" />
   <meta property="og:description" content="{{ page.description | default: site.description }}" />
-  <meta property="og:url"         content="{{ page.url | absolute_url }}" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="{{ page.image | default: site.image | absolute_url }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ page.image | default: site.image | absolute_url }}" />
+
+  <!-- SEO multilingüe -->
+  <link rel="alternate" hreflang="es" href="/es/" />
+  <link rel="alternate" hreflang="en" href="/en/" />
+  <link rel="alternate" hreflang="fr" href="/fr/" />
+  <link rel="alternate" hreflang="de" href="/de/" />
+  <link rel="alternate" hreflang="x-default" href="/en/" />
 
   <!-- Favicons -->
   <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
-  <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ '/assets/images/favicon-32x32.png' | relative_url }}" />
-  <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ '/assets/images/favicon-16x16.png' | relative_url }}" />
-  <link rel="apple-touch-icon" sizes="180x180"
-        href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}" />
 
-  <!-- Google Fonts -->
+  <!-- Fuentes y estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?
-         family=Inter:wght@400;500;700;900&
-         family=Playfair+Display:wght@700;900&
-         display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Main stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
 
   <!-- Plugins, meta & scripts -->
   {{ head }}
 </head>
 <body class="theme--dark">
-
-  <!-- HEADER & NAVIGATION -->
+  <!-- HEADER -->
   <header class="site-header">
     {% include lang-switcher.html %}
     <nav aria-label="Main navigation">
@@ -55,7 +51,7 @@
     </nav>
   </header>
 
-  <!-- PAGE CONTENT -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="page page__content">
     {{ content }}
   </main>
@@ -64,6 +60,5 @@
   <footer class="site-footer">
     {% include footer.html %}
   </footer>
-
 </body>
 </html>
