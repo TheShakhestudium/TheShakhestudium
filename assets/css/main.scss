@@ -1,42 +1,359 @@
-// Importa el skin base de Minimal Mistakes
+// ===================================================================
+// CUSTOM SASS STYLESHEET FOR MINIMAL MISTAKES THEME
+// by TheShakhestudium (Brand Board applied)
+// ===================================================================
+
+// ------------------------------------------------------------
+// 1. IMPORT MINIMAL MISTAKES SKIN (BASE THEME OVERRIDES LATER)
+// ------------------------------------------------------------
 @import "minimal-mistakes/skins/default";
 
-// Colores personalizados (ajusta a tu identidad visual)
-$primary-color: #512da8;         // Color principal (links, botones primarios)
-$background-color: #faf7f0;      // Fondo general
-$text-color: #232323;            // Texto principal
-$accent-color: #ff9800;          // Color de acento (botones secundarios, detalles)
-$header-background: #3B0086;     // Fondo header/nav
-$footer-background: #232323;     // Fondo footer
+// ------------------------------------------------------------
+// 2. BRAND COLORS AND VARIABLES
+// ------------------------------------------------------------
+$primary-color:        #D4AF37;   // Antique Gold (links, botones principales)
+$background-color:     #171717;   // Deep Black (fondo general)
+$text-color:           #C0C0C0;   // Gris neutro claro (texto principal)
+$accent-color:         #FF2B91;   // Neon Fuchsia (botones secundarios, detalles)
+$header-background:    #171717;   // Deep Black (fondo header/nav)
+$footer-background:    #171717;   // Deep Black (fondo footer)
+$footer-text:          #D4AF37;   // Antique Gold (texto footer)
+$link-hover:           #00BFFF;   // Electric Blue (hover enlaces)
+$footer-separator:     #8B572A;   // Bronze (separador footer)
 
-// Sobrescribe estilos usando tus variables personalizadas
+$font-main:            'Inter', sans-serif;           // Texto, UI, cuerpo
+$font-alt:             'Playfair Display', serif;    // Titulares, slogans, logo
+
+// ------------------------------------------------------------
+// 3. GENERAL SITE STYLES
+// ------------------------------------------------------------
 body {
   background: $background-color;
   color: $text-color;
+  font-family: $font-main;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
 }
 
 a, .site-title {
   color: $primary-color;
+  font-family: $font-main;
+  text-decoration: underline;
+  transition: color 0.2s;
 }
 
-a:hover {
-  color: $accent-color;
+a:hover,
+a:focus,
+.site-title:hover {
+  color: $link-hover;
+  outline: none;
 }
 
-.page__title, .btn, .button {
+// Botones y acentos
+.page__title,
+.btn,
+.button,
+.mm-btn {
+  background: $primary-color;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  font-family: $font-main;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn:hover,
+.button:hover,
+.mm-btn:hover {
   background: $accent-color;
-  color: #fff;
 }
 
+// ------------------------------------------------------------
+// 4. HEADER & NAVIGATION
+// ------------------------------------------------------------
 .site-header {
   background: $header-background;
+  color: #ffffff;
+  padding: 1.25rem 0;
+
+  .site-title {
+    color: #ffffff;
+    font-family: $font-alt;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-right: 2rem;
+      font-family: $font-main;
+      font-size: 1.08rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+    }
+  }
 }
 
+.lang-switcher {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+
+  a {
+    color: $accent-color;
+    font-family: $font-main;
+    font-weight: 600;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// 5. MAIN CONTENT AREA
+// ------------------------------------------------------------
+main,
+.page,
+.page__content {
+  background: transparent;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: $font-main;
+  color: $text-color;
+}
+
+h1, h2 {
+  color: $primary-color;
+  font-family: $font-alt;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h3, h4, h5, h6 {
+  color: $primary-color;
+  font-family: $font-alt;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.lead,
+.slogan {
+  font-family: $font-alt;
+  font-weight: 900;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 1.5rem 0;
+}
+
+blockquote {
+  border-left: 4px solid $primary-color;
+  padding-left: 1.5em;
+  color: darken($primary-color, 25%);
+  background: lighten($primary-color, 44%);
+  margin: 2em 0;
+}
+
+// ------------------------------------------------------------
+// 6. SIDEBAR (IF ENABLED)
+// ------------------------------------------------------------
+.sidebar {
+  background: lighten($header-background, 30%);
+  color: #ffffff;
+  padding: 2rem 1rem;
+  font-family: $font-main;
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// ------------------------------------------------------------
+// 7. FOOTER (DETAILED BRAND STYLES)
+// ------------------------------------------------------------
 .site-footer {
-  background: $footer-background;
-  color: #faf7f0;
+  background-color: $footer-background;
+  color: $footer-text;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
+  font-family: $font-main;
+  border-top: 4px solid $footer-text;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-copy {
+      margin: 0;
+      line-height: 1.4;
+      color: $footer-text;
+    }
+  }
+
+  .footer-nav {
+    margin-top: 1rem;
+
+    @media (min-width: 600px) {
+      margin-top: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: $font-main;
+
+      li {
+        position: relative;
+
+        &:nth-child(2)::after,
+        &:nth-child(4)::after {
+          content: "|";
+          margin-left: 0.5rem;
+          color: $footer-separator;
+        }
+      }
+
+      a {
+        color: $footer-text;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus {
+          color: $link-hover;
+          outline: none;
+        }
+      }
+    }
+  }
 }
 
-.site-logo img {
-  max-height: 60px; // Ajusta el tamaño del logo según necesites
+// ------------------------------------------------------------
+// 8. MISCELLANEOUS
+// ------------------------------------------------------------
+// Responsive images
+img,
+.page__content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+
+  th, td {
+    border: 1px solid $primary-color;
+    padding: 0.75em 1em;
+  }
+
+  th {
+    background: lighten($primary-color, 55%);
+    color: $primary-color;
+    font-weight: 700;
+  }
+
+  tr:nth-child(even) {
+    background: #f5f5f5;
+  }
+}
+
+// Code blocks
+pre,
+code {
+  font-family: 'Fira Mono', 'Consolas', 'Liberation Mono', monospace;
+  background: #232323;
+  color: $primary-color;
+  border-radius: 3px;
+  padding: 0.3em 0.6em;
+}
+
+// Forms
+input,
+textarea,
+select {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding: 0.5em;
+  font-family: $font-main;
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+input[type="submit"],
+button,
+.btn {
+  background: $primary-color;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $accent-color;
+  }
+}
+
+// Accessibility focus
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid $accent-color;
+  outline-offset: 2px;
 }
