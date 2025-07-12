@@ -1,7 +1,15 @@
 ---
 # Este front-matter indica a Jekyll que compile Sass aquí
 ---
+@import 'mixins'; // Importa el archivo con el mixin base
 
+body {
+  @include base; // Usa el mixin base
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 @use "minimal-mistakes/skins/default" as *;
 
 // 1) Inyecta el CSS base de Minimal Mistakes
