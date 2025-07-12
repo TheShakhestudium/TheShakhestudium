@@ -1,10 +1,10 @@
 ---
 # Este front-matter indica a Jekyll que compile Sass aquí
 ---
-@import 'mixins'; // Importa el archivo con el mixin base
+@import "mixins";
 
 body {
-  @include base; // Usa el mixin base
+  @include base;
 }
 @use "minimal-mistakes/skins/default" as *;
 
