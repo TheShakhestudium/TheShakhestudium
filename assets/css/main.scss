@@ -1,20 +1,11 @@
 ---
 # Este front-matter indica a Jekyll que compile Sass aquí
 ---
+
 @import "mixins";
-
-body {
-  @include base;
-}
-@use "minimal-mistakes/skins/default" as *;
-
-// 1) Inyecta el CSS base de Minimal Mistakes
-@include base;
-
-// 2) Importa tus overrides
 @import "minimal-mistakes-overrides";
 
-// 3) Variables CSS y reset global
+/* Variables CSS y reset global */
 :root {
   --font-heading: 'Playfair Display', serif;
   --font-body:    'Inter', sans-serif;
@@ -27,6 +18,7 @@ body {
   box-sizing: border-box; margin:0; padding:0;
 }
 body {
+  @include base;
   font-family: var(--font-body);
   background: var(--color-bg);
   color: var(--color-text);
@@ -41,7 +33,7 @@ a:focus, .btn--primary:focus {
   outline-offset: 3px;
 }
 
-// 4) Hero
+/* Hero */
 .hero {
   position: relative;
   background:
@@ -58,7 +50,7 @@ a:focus, .btn--primary:focus {
 .hero__title { font-family:var(--font-heading); font-size:2.5rem; margin-bottom:var(--spacing); }
 .hero__subtitle { font-weight:400; }
 
-// 5) Botones
+/* Botones */
 .btn--primary {
   display:inline-block; margin-top:var(--spacing);
   padding:calc(var(--spacing)*0.75) calc(var(--spacing)*1.5);
@@ -67,17 +59,17 @@ a:focus, .btn--primary:focus {
 }
 .btn--primary:hover, .btn--primary:focus { background:#c1275b; }
 
-// 6) Secciones
+/* Secciones */
 .section { padding:4rem var(--spacing); }
 .section--split { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
 
-// 7) Footer básico (antes de los overrides)
+/* Footer básico (antes de los overrides) */
 .site-footer { text-align:center; padding:2rem var(--spacing); background:#000; }
 .footer__links { list-style:none; margin-top:var(--spacing); }
 .footer__links li { display:inline; margin:0 0.5rem; }
 .footer__links a { color:var(--color-text); font-size:0.9rem; }
 
-// 8) Responsivo
+/* Responsivo */
 @media (max-width:768px) {
   .section--split { grid-template-columns:1fr; }
   .hero__title { font-size:2rem; }
