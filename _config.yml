@@ -6,6 +6,10 @@ url: "https://github.com/TheShakhestudium"
 remote_theme: "mmistakes/minimal-mistakes"
 plugins:
   - jekyll-multiple-languages-plugin
+  - jekyll-minifier
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
 
 languages: ["en", "es"]
 default_lang: "en"
